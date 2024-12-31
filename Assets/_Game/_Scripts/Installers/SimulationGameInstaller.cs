@@ -8,8 +8,11 @@ namespace SimulationGame.Installer
     {
         public override void InstallBindings()
         {
+            SimulationGameSignalInstaller.Install(Container);
             //Controller
             Container.BindInterfacesAndSelfTo<ApplicationController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<InputController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerMovementController>().AsSingle();
         }
     }
 }
