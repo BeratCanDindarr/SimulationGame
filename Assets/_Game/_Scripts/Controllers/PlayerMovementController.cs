@@ -28,7 +28,7 @@ namespace SimulationGame.Controller
         
         public void Update()
         {
-            Debug.Log("Input Control:" + _inputController.GetMovementInput());
+            //Debug.Log("Input Control:" + _inputController.GetMovementInput());
         }
 
 

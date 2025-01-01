@@ -13,6 +13,9 @@ namespace SimulationGame.Interface
     }
         
     public readonly struct ApplicationQuitSignal { }
+    
+    public readonly struct LeftClickDownSignal { }
+    public readonly struct LeftClickUpSignal { }
         
         
         
