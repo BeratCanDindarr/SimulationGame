@@ -10,6 +10,8 @@ namespace SimulationGame.Installer
             SignalBusInstaller.Install(Container);
             Container.DeclareSignal<GameIsPausedSignal>();
             Container.DeclareSignal<ApplicationQuitSignal>();
+            Container.DeclareSignal<LeftClickUpSignal>();
+            Container.DeclareSignal<LeftClickDownSignal>();
         }
     }
 }
