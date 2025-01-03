@@ -12,7 +12,7 @@ namespace SimulationGame.Installer
             //Controller
             Container.BindInterfacesAndSelfTo<ApplicationController>().AsSingle();
             Container.BindInterfacesAndSelfTo<InputController>().AsSingle();
-            Container.BindInterfacesAndSelfTo<PlayerMovementController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerController>().AsSingle();
             Container.BindInterfacesAndSelfTo<DataController>().AsSingle();
         }
     }

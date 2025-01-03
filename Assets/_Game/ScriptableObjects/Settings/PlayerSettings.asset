@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccdab850142d4214a94059f333fe494a, type: 3}
-  m_Name: SettingsInstaller
+  m_Script: {fileID: 11500000, guid: 40295b734474456d845ba50299e08f33, type: 3}
+  m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  settings:
-  - {fileID: 11400000, guid: 49801aa225575324faf49ba16f0cb567, type: 2}
-  - {fileID: 11400000, guid: c43842234152e0c41b3866e323787bdc, type: 2}
+  playerReference: {fileID: 145273300620739724, guid: ab544bffada402442a8d3d6bbae9a9f8, type: 3}
+  PlayerSpeed: 10
+  PlayerJumpForce: 0

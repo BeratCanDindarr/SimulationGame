@@ -35,5 +35,6 @@ namespace SimulationGame.Controller
         }
 
         public Vector2 GetMovementInput() => _inputSystemActions.Player.Move.ReadValue<Vector2>();
+        public Vector2 GetLookInput() => _inputSystemActions.Player.Look.ReadValue<Vector2>();
     }
 }

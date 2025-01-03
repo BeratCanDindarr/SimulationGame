@@ -8,22 +8,10 @@ using Zenject;
 
 namespace SimulationGame.View
 {
-    public class GameLoopView : MonoBehaviour
+    public class GameLoopView : BaseView
     {
         private List<IUpdate> _updates = new List<IUpdate>();
         private bool _isPaused = false;
-        
-
-        #region Injection
-
-        private SignalBus _signalBus;
-        [Inject]
-        public void Construct(SignalBus signalBus)
-        {
-            _signalBus = signalBus;
-        }
-
-        #endregion
 
         public void Init()
         {
@@ -47,6 +35,7 @@ namespace SimulationGame.View
         }
         private void Update()
         {
+            if(!IsUpdateRunning())return;
             foreach (var updatedObj in _updates) 
                 updatedObj.Update();
         }
