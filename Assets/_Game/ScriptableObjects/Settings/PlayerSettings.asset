@@ -15,3 +15,4 @@ MonoBehaviour:
   playerReference: {fileID: 145273300620739724, guid: ab544bffada402442a8d3d6bbae9a9f8, type: 3}
   PlayerSpeed: 10
   PlayerJumpForce: 0
+  PlayerLookSensitivity: 10

@@ -28,6 +28,8 @@ namespace SimulationGame.Controller
 
         public override void Initialize()
         {
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
             //Load Data
             _dataController.Init();
             Debug.Log("Application Initialized");

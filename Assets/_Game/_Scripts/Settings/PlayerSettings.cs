@@ -16,6 +16,9 @@ namespace SimulationGame.Settings
         public int PlayerSpeed;
         public int PlayerJumpForce;
         
+        [Header("Player Look Settings")]
+        public float PlayerLookSensitivity;
+        
 
     }
 }

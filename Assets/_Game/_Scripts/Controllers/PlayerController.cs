@@ -6,9 +6,10 @@ using Zenject;
 
 namespace SimulationGame.Controller
 {
-    public class PlayerController : IUpdate
+    public class PlayerController : IUpdate,IFixedUpdate
     {
         private PlayerView _playerView;
+        
         #region Injection
 
         private InputController _inputController;
@@ -32,7 +33,8 @@ namespace SimulationGame.Controller
         public void Init()
         {
             CreatePlayer();
-            _gameLoopView.Subscribe(this);
+            _gameLoopView.Subscribe((IUpdate)this);
+            _gameLoopView.Subscribe((IFixedUpdate)this);
         }
 
         private void CreatePlayer()
@@ -42,8 +44,10 @@ namespace SimulationGame.Controller
 
         public void Update()
         {
-            //Debug.Log("Input Control:" + _inputController.GetMovementInput());
             _playerView.Move(_inputController.GetMovementInput());
+        }
+        public void FixedUpdate()
+        {
             _playerView.Look(_inputController.GetLookInput());
         }
 
@@ -51,7 +55,10 @@ namespace SimulationGame.Controller
 
         public void Dispose()
         {
-            _gameLoopView.Unsubscribe(this);
+            _gameLoopView.Unsubscribe((IUpdate)this);
+            _gameLoopView.Unsubscribe((IFixedUpdate)this);
         }
+
+        
     }
 }
