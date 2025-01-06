@@ -40,14 +40,18 @@ namespace SimulationGame.Controller
         private void CreatePlayer()
         {
             _playerView = _diContainer.InstantiatePrefabForComponent<PlayerView>(_playerSettings.playerReference);
+            _playerView.transform.position += Vector3.up * 3;
+            _playerView.Init();
         }
 
         public void Update()
         {
-            _playerView.Move(_inputController.GetMovementInput());
+            _playerView.GroundCheck();
+            _playerView.SpeedControl();
         }
         public void FixedUpdate()
         {
+            _playerView.Move(_inputController.GetMovementInput());
             _playerView.Look(_inputController.GetLookInput());
         }
 

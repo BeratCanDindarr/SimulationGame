@@ -13,8 +13,13 @@ namespace SimulationGame.Settings
         [Header("Prefab Settings")]
         public GameObject playerReference;
 
+        public float PlayerHeight;
+        public LayerMask GroundLayer;
+        public float GroundDrag;
         public int PlayerSpeed;
-        public int PlayerJumpForce;
+        public float PlayerJumpForce;
+        public float PlayerJumpCoolDown;
+        public float PlayerAirMultiplier;
         
         [Header("Player Look Settings")]
         public float PlayerLookSensitivity;

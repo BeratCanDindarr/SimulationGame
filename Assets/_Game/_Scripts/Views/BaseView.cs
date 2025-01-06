@@ -20,11 +20,11 @@ namespace SimulationGame.View
 
         public void DestroyView(float delay = 0)
         {
-            DestroyView();
+            Dispose();
             Destroy(this.gameObject,delay);
         }
 
-        protected virtual void DestroyView()
+        protected virtual void Dispose()
         {
             
         }

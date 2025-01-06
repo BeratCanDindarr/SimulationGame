@@ -24,6 +24,12 @@ namespace SimulationGame.Controller
             _inputSystemActions = new InputSystem_Actions();
             _inputSystemActions.Player.Enable();
             MouseLeftClickSubscribe();
+            JumpButtonClickSubscribe();
+        }
+
+        private void JumpButtonClickSubscribe()
+        {
+            _inputSystemActions.Player.Jump.started += context => _signalBus.Fire<JumpButtonClickedSignal>();
         }
 
         private void MouseLeftClickSubscribe()
@@ -36,5 +42,6 @@ namespace SimulationGame.Controller
 
         public Vector2 GetMovementInput() => _inputSystemActions.Player.Move.ReadValue<Vector2>();
         public Vector2 GetLookInput() => _inputSystemActions.Player.Look.ReadValue<Vector2>();
+        
     }
 }

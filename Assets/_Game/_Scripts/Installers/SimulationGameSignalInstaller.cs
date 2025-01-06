@@ -12,6 +12,7 @@ namespace SimulationGame.Installer
             Container.DeclareSignal<ApplicationQuitSignal>();
             Container.DeclareSignal<LeftClickUpSignal>();
             Container.DeclareSignal<LeftClickDownSignal>();
+            Container.DeclareSignal<JumpButtonClickedSignal>();
         }
     }
 }
