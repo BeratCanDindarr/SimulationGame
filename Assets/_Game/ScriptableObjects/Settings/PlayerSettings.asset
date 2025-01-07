@@ -17,7 +17,7 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 64
-  GroundDrag: 0
+  GroundDrag: 2
   PlayerSpeed: 1000
   PlayerJumpForce: 3
   PlayerJumpCoolDown: 3

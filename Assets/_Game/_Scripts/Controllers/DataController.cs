@@ -1,3 +1,4 @@
+using SimulationGame.Const;
 using SimulationGame.Controller;
 using SimulationGame.Interface;
 using UnityEngine;
@@ -6,6 +7,15 @@ namespace SimulationGame
 {
     public class DataController : BaseController
     {
+        #region Injection
+
+        private readonly DailyCycleController _dailyCycleController;
+        public DataController(DailyCycleController dailyCycleController)
+        {
+            _dailyCycleController = dailyCycleController;
+        }
+
+        #endregion
         // ReSharper disable Unity.PerformanceAnalysis
         public override void Initialize()
         {
@@ -42,6 +52,12 @@ namespace SimulationGame
         private void LoadData()
         {
             var levelTest =  JsonUtility.FromJson<TestSave>(PlayerPrefs.GetString("PlayerLevel"));
+            _dailyCycleController.DailyCycleSaveData = JsonUtility.FromJson<DailyCycleSaveData>
+                (PlayerPrefs.GetString(GlobalConst.SaveDataName.DAILY_CYCLE_SAVE,JsonUtility.ToJson(new DailyCycleSaveData()
+                {
+                    CurrentDailyPhasePhaseType = DayPhaseType.Morning,
+                    PassedTime = 0
+                })));
             Debug.Log(levelTest.level.ToString());
         }
 
@@ -53,7 +69,7 @@ namespace SimulationGame
                 level = 10
             };
             PlayerPrefs.SetString("PlayerLevel",JsonUtility.ToJson(testSave));
-
+            PlayerPrefs.SetString(GlobalConst.SaveDataName.DAILY_CYCLE_SAVE,JsonUtility.ToJson(_dailyCycleController.DailyCycleSaveData));
         }
 
         public void Unsubscribe()

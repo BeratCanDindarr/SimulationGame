@@ -14,6 +14,8 @@ namespace SimulationGame.Installer
             Container.BindInterfacesAndSelfTo<InputController>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerController>().AsSingle();
             Container.BindInterfacesAndSelfTo<DataController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<TimerController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DailyCycleController>().AsSingle();
         }
     }
 }
