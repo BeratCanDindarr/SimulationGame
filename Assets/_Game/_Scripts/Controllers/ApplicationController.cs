@@ -1,4 +1,5 @@
 ﻿using SimulationGame.Settings;
+using SimulationGame.View;
 using UnityEngine;
 
 namespace SimulationGame.Controller
@@ -14,13 +15,15 @@ namespace SimulationGame.Controller
         private readonly DataController _dataController;
         private readonly TimerController _timerController;
         private readonly DailyCycleController _dailyCycleController;
+        private readonly SkyBoxView _skyBoxView;
         
         public ApplicationController(GameSettings gameSettings
             , PlayerController playerController
             , InputController inputController
             , DataController dataController
             , TimerController timerController
-            , DailyCycleController dailyCycleController)
+            , DailyCycleController dailyCycleController
+            , SkyBoxView skyBoxView)
         {
             _gameSettings = gameSettings;
             _playerController = playerController;
@@ -28,6 +31,7 @@ namespace SimulationGame.Controller
             _dataController = dataController;
             _timerController = timerController;
             _dailyCycleController = dailyCycleController;
+            _skyBoxView = skyBoxView;
         }
 
         #endregion
@@ -37,6 +41,7 @@ namespace SimulationGame.Controller
             //Cursor.lockState = CursorLockMode.Locked;
             //Cursor.visible = false;
             //Load Data
+            _skyBoxView.Init();
             _timerController.Init();
             _dataController.Init();
             Debug.Log("Application Initialized");

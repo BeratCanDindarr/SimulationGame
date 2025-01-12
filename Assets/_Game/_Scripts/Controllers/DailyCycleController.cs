@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using SimulationGame.Interface;
 using SimulationGame.Settings;
+using SimulationGame.View;
 using UnityEngine;
 
 namespace SimulationGame.Controller
@@ -13,11 +14,14 @@ namespace SimulationGame.Controller
 
         private TimerController _timerController;
         private DailyCycleSettings _dailyCycleSettings;
+        private SkyBoxView _skyBoxView;
         public DailyCycleController(TimerController timerController
-            , DailyCycleSettings dailyCycleSettings)
+            , DailyCycleSettings dailyCycleSettings
+            , SkyBoxView skyBoxView)
         {
             _timerController = timerController;
             _dailyCycleSettings = dailyCycleSettings;
+            _skyBoxView = skyBoxView;
         }
 
         #endregion
@@ -32,8 +36,10 @@ namespace SimulationGame.Controller
             var dayPhaseData = _dailyCycleSettings.DailyCycleDatas.FirstOrDefault(dayPhase =>
                 dayPhase.DayPhaseType == DailyCycleSaveData.CurrentDailyPhasePhaseType);
             if(dayPhaseData == null) return;
-            if(dayPhaseData.PassTime <= 0) ChangeDayPhase(dayPhaseData.DayPhaseType);
-            dayPhaseData.PassTime -= elapsedTime;
+            DailyCycleSaveData.PassedTime += elapsedTime;
+            if(dayPhaseData.PassTime > DailyCycleSaveData.PassedTime) return;
+            ChangeDayPhase(dayPhaseData.DayPhaseType);
+            _skyBoxView.ChangeSkyBox(dayPhaseData.DayCubeMap);
             Debug.Log("DayPhasetype" + DailyCycleSaveData.CurrentDailyPhasePhaseType + "passedTime:" + DailyCycleSaveData.PassedTime);
         }
 
@@ -42,6 +48,7 @@ namespace SimulationGame.Controller
             int dayPhaseValue = ((int)dayPhaseType+1);
             if (dayPhaseValue >= (int)DayPhaseType.DayPhaseCount) dayPhaseValue = 0;
             DailyCycleSaveData.CurrentDailyPhasePhaseType = (DayPhaseType)dayPhaseValue;
+            DailyCycleSaveData.PassedTime = 0;
         }
     }
 

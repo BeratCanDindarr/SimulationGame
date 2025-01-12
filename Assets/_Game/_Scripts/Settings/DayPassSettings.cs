@@ -15,6 +15,7 @@ namespace SimulationGame.Settings
     [Serializable]
     public class DailyCycleData
     {
+        public Cubemap DayCubeMap;
         public DayPhaseType DayPhaseType;
         public long PassTime;
         //SkyTexture        

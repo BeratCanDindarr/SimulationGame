@@ -13,19 +13,27 @@ MonoBehaviour:
   m_Name: DailyCycleSettings
   m_EditorClassIdentifier: 
   DailyCycleDatas:
-  - DayPhaseType: 0
-    PassTime: 10
-  - DayPhaseType: 1
-    PassTime: 10
-  - DayPhaseType: 2
-    PassTime: 10
-  - DayPhaseType: 3
-    PassTime: 10
-  - DayPhaseType: 4
-    PassTime: 10
-  - DayPhaseType: 5
-    PassTime: 10
-  - DayPhaseType: 6
-    PassTime: 10
-  - DayPhaseType: 7
-    PassTime: 10
+  - DayCubeMap: {fileID: 8900000, guid: 1153dc89e66880c4eb7adc16ba588855, type: 3}
+    DayPhaseType: 0
+    PassTime: 20
+  - DayCubeMap: {fileID: 8900000, guid: c9bc6cdb7a2e78b4c85ae74715b0a355, type: 3}
+    DayPhaseType: 1
+    PassTime: 20
+  - DayCubeMap: {fileID: 8900000, guid: 6e998e53d0a82bb45928cd08a0fcfff3, type: 3}
+    DayPhaseType: 2
+    PassTime: 20
+  - DayCubeMap: {fileID: 8900000, guid: 3b5d67736d7b8ad4f8da4d58eaef0b98, type: 3}
+    DayPhaseType: 3
+    PassTime: 20
+  - DayCubeMap: {fileID: 8900000, guid: 09999639e73bcd64abda22253af612d8, type: 3}
+    DayPhaseType: 4
+    PassTime: 20
+  - DayCubeMap: {fileID: 8900000, guid: 762f22ba43541df4e95e0e7126e8d96c, type: 3}
+    DayPhaseType: 5
+    PassTime: 20
+  - DayCubeMap: {fileID: 8900000, guid: 09999639e73bcd64abda22253af612d8, type: 3}
+    DayPhaseType: 6
+    PassTime: 20
+  - DayCubeMap: {fileID: 8900000, guid: 8967f190ed29c46418093a47d66daee8, type: 3}
+    DayPhaseType: 7
+    PassTime: 20

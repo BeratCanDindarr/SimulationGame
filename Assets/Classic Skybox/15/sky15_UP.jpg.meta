@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: d82c3ea068ac83d409d3c9422624bf09
+AssetOrigin:
+  serializedVersion: 1
+  productId: 24923
+  packageName: Classic Skybox
+  packageVersion: 1.0
+  assetPath: Assets/Classic Skybox/15/sky15_UP.jpg
+  uploadId: 40216
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -167,10 +174,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 24923
-  packageName: Classic Skybox
-  packageVersion: 1.0
-  assetPath: Assets/Classic Skybox/15/sky15_UP.jpg
-  uploadId: 40216
